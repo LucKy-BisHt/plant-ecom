@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:plant_app/pages/favourite.dart';
 import 'package:plant_app/pages/profile.dart';
 
 import '../constants.dart';
@@ -38,7 +39,12 @@ class MyBottomNavBar extends StatelessWidget {
             ),
             IconButton(
               icon: SvgPicture.asset("assets/icons/heart-icon.svg"),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyFavourites()),
+                );
+              },
             ),
             IconButton(
               icon: SvgPicture.asset("assets/icons/user-icon.svg"),

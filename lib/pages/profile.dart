@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/auth/login.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -50,20 +51,49 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(
                 height: 12,
               ),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor:
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.green),
-                ),
-                onPressed: () {},
-                child: Text(
-                  "About Us",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w400,
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "About Us",
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.green),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    },
+                    child: Text(
+                      "Log out",
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  )
+                ],
               )
             ],
           ),

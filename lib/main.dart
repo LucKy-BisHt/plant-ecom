@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/auth/login.dart';
 import 'package:plant_app/constants.dart';
 import 'package:plant_app/pages/profile.dart';
 import 'package:plant_app/screens/home/home_screen.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         '/profile': (context) => ProfileScreen(),
+        '/login': (context) => LoginPage(),
       },
       debugShowCheckedModeBanner: false,
       title: 'PLANTIFY',
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
 
-      home: HomeScreen(),
+      home: LoginPage(),
 
     );
   }

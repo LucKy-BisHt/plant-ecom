@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:plant_app/screens/home/home_screen.dart';
 
 import 'mapScreen.dart';
 
@@ -36,6 +37,14 @@ class _MapPageBodyState extends State<MapPageBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomeScreen()),
+          );
+        }, icon: Icon(Icons.arrow_back),),
+      ),
       body: GoogleMap(
         mapType: MapType.hybrid,
         initialCameraPosition: _kGooglePlex,
